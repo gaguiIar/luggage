@@ -48,12 +48,12 @@
           <span class = "trn">Language</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">English</a>
-          <a class="dropdown-item" href="#">Español</a>
-          <a class="dropdown-item" href="#">Italiano</a>
-          <a class="dropdown-item" href="#">Français</a>
-          <a class="dropdown-item" href="#">عربي</a>
-          <a class="dropdown-item" href="#">Português</a>
+          <a class="dropdown-item" id="menu-en" href="#">English</a>
+          <a class="dropdown-item" id="menu-es" href="#">Español</a>
+          <a class="dropdown-item" id="menu-it" href="#">Italiano</a>
+          <a class="dropdown-item" id="menu-fr" href="#">Français</a>
+          <a class="dropdown-item" id="menu-ar" href="#">عربي</a>
+          <a class="dropdown-item" id="menu-pt" href="#">Português</a>
         </div>
       </div>
     </div>
@@ -64,12 +64,12 @@
           <span class = "trn">Language</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" id="en" href="#">English</a>
-          <a class="dropdown-item" id="es" href="#">Español</a>
-          <a class="dropdown-item" id="it" href="#">Italiano</a>
-          <a class="dropdown-item" id="fr" href="#">Français</a>
-          <a class="dropdown-item" id="ar" href="#">عربي</a>
-          <a class="dropdown-item" id="pt" href="#">Português</a>
+          <a class="dropdown-item" id="menu-en" href="#">English</a>
+          <a class="dropdown-item" id="menu-es" href="#">Español</a>
+          <a class="dropdown-item" id="menu-it" href="#">Italiano</a>
+          <a class="dropdown-item" id="menu-fr" href="#">Français</a>
+          <a class="dropdown-item" id="menu-ar" href="#">عربي</a>
+          <a class="dropdown-item" id="menu-pt" href="#">Português</a>
         </div>
       </div>
 
@@ -217,13 +217,30 @@
       t: dict
     }); //use English
 
-    // translator.lang("en"); //set page lang to eng
-    //
-    // translator.lang("es"); // set page lang to spanish
-    //
-    // translator.lang("ar"); //set page lang to arabic
-    //
-    // translator.lang("fr"); // set page lang to french
+    $('#menu-en').click(function(){
+      translator.lang('en');
+      return false;
+    });
+    $('#menu-es').click(function(){
+      translator.lang('es');
+      return false;
+    });
+    $('#menu-it').click(function(){
+      translator.lang('it');
+      return false;
+    });
+    $('#menu-fr').click(function(){
+      translator.lang('fr');
+      return false;
+    });
+    $('#menu-ar').click(function(){
+      translator.lang('ar');
+      return false;
+    });
+    $('#menu-pt').click(function(){
+      translator.lang('pt');
+      return false;
+    });
 
 
   </script>
