@@ -13,7 +13,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- Bootstrap Responsive Viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <!-- style -->
   <style media="screen">
     label,
     h1,
@@ -37,15 +37,17 @@
       background-color: black;
     }
   </style>
+
 </head>
 
 <body>
   <div class="container my-3 px-3 text-white">
     <div class="row text-center">
       <h1 class="text-center trn col-md-10">Gerardo's Found Luggage Form</h1>
+      <!-- dropdown one(for big screens) -->
       <div class="dropdown col-md-2 d-none d-sm-block">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class = "trn">Language</span>
+          <span class="trn">Language</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" id="menu-en" href="#">English</a>
@@ -57,24 +59,25 @@
         </div>
       </div>
     </div>
+    <!-- dropdown one(for xs screens) -->
     <div class="text-center">
       <p class="text-center trn">Thank you for trying to return my luggage, please enter your information below to send a message. I'll make sure to get back to you as fast as I can :)</p>
       <div class="dropdown col-md-2 d-block d-sm-none">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class = "trn">Language</span>
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonSmall" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="trn">Language</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" id="menu-en" href="#">English</a>
-          <a class="dropdown-item" id="menu-es" href="#">Español</a>
-          <a class="dropdown-item" id="menu-it" href="#">Italiano</a>
-          <a class="dropdown-item" id="menu-fr" href="#">Français</a>
-          <a class="dropdown-item" id="menu-ar" href="#">عربي</a>
-          <a class="dropdown-item" id="menu-pt" href="#">Português</a>
+          <a class="dropdown-item" id="menu-en-xs" href="#">English</a>
+          <a class="dropdown-item" id="menu-es-xs" href="#">Español</a>
+          <a class="dropdown-item" id="menu-it-xs" href="#">Italiano</a>
+          <a class="dropdown-item" id="menu-fr-xs" href="#">Français</a>
+          <a class="dropdown-item" id="menu-ar-xs" href="#">عربي</a>
+          <a class="dropdown-item" id="menu-pt-xs" href="#">Português</a>
         </div>
       </div>
-
     </div>
     <hr>
+    <!-- message form -->
     <section>
       <h1 class="mt-4 mb-2 trn">Send me a message!</h1>
       <form class="row g-3">
@@ -103,30 +106,15 @@
             <span class="trn">Submit</span>
           </button>
         </div>
-
-
-
       </form>
-
-
-
-
     </section>
-
   </div>
-
-
-
 
   <!-- javascript + plugins -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
   <script src="translate.js-master/jquery.translate.js"></script>
-
-
-
   <script type="text/javascript">
     var dict = {
       "First Name": {
@@ -211,40 +199,60 @@
       }
     }
 
-
     var translator = $('body').translate({
       lang: "en",
       t: dict
-    }); //use English
-
-    $('#menu-en').click(function(){
+    });
+    $('#menu-en').click(function() {
       translator.lang('en');
       return false;
     });
-    $('#menu-es').click(function(){
+    $('#menu-es').click(function() {
       translator.lang('es');
       return false;
     });
-    $('#menu-it').click(function(){
+    $('#menu-it').click(function() {
       translator.lang('it');
       return false;
     });
-    $('#menu-fr').click(function(){
+    $('#menu-fr').click(function() {
       translator.lang('fr');
       return false;
     });
-    $('#menu-ar').click(function(){
+    $('#menu-ar').click(function() {
       translator.lang('ar');
       return false;
     });
-    $('#menu-pt').click(function(){
+    $('#menu-pt').click(function() {
       translator.lang('pt');
       return false;
     });
-
-
+    // small
+    $('#menu-en-xs').click(function() {
+      translator.lang('en');
+      return false;
+    });
+    $('#menu-es-xs').click(function() {
+      translator.lang('es');
+      return false;
+    });
+    $('#menu-it-xs').click(function() {
+      translator.lang('it');
+      return false;
+    });
+    $('#menu-fr-xs').click(function() {
+      translator.lang('fr');
+      return false;
+    });
+    $('#menu-ar-xs').click(function() {
+      translator.lang('ar');
+      return false;
+    });
+    $('#menu-pt-xs').click(function() {
+      translator.lang('pt');
+      return false;
+    });
   </script>
-
 </body>
 
 </html>
