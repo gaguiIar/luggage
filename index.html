@@ -4,11 +4,16 @@
 <head>
   <meta charset="utf-8">
   <title> Found Luggage Form</title>
+  <!-- Google Fonts  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Bootstrap Responsive Viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style media="screen">
     label,
     h1,
@@ -27,6 +32,7 @@
       border-color: lightgrey !important;
       color: white !important;
     }
+
     .btn-secondary {
       background-color: black;
     }
@@ -39,7 +45,7 @@
       <h1 class="text-center trn col-md-10">Gerardo's Found Luggage Form</h1>
       <div class="dropdown col-md-2 d-none d-sm-block">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Language
+          <span class = "trn">Language</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">English</a>
@@ -55,15 +61,15 @@
       <p class="text-center trn">Thank you for trying to return my luggage, please enter your information below to send a message. I'll make sure to get back to you as fast as I can :)</p>
       <div class="dropdown col-md-2 d-block d-sm-none">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Language
+          <span class = "trn">Language</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">English</a>
-          <a class="dropdown-item" href="#">Español</a>
-          <a class="dropdown-item" href="#">Italiano</a>
-          <a class="dropdown-item" href="#">Français</a>
-          <a class="dropdown-item" href="#">عربي</a>
-          <a class="dropdown-item" href="#">Português</a>
+          <a class="dropdown-item" id="en" href="#">English</a>
+          <a class="dropdown-item" id="es" href="#">Español</a>
+          <a class="dropdown-item" id="it" href="#">Italiano</a>
+          <a class="dropdown-item" id="fr" href="#">Français</a>
+          <a class="dropdown-item" id="ar" href="#">عربي</a>
+          <a class="dropdown-item" id="pt" href="#">Português</a>
         </div>
       </div>
 
@@ -104,109 +110,124 @@
 
 
 
+
     </section>
+
   </div>
 
 
+
+
+  <!-- javascript + plugins -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <script src="translate.js-master/jquery.translate.js"></script>
+
+
+
+  <script type="text/javascript">
+    var dict = {
+      "First Name": {
+        pt: "Nome",
+        en: "First Name",
+        es: "Nombre",
+        fr: "Prénom",
+        it: "Nome",
+        ar: "الاسم الأول"
+      },
+      "Last Name": {
+        pt: "Sobrenome",
+        en: "Last Name",
+        es: "Apellido",
+        fr: "Nom de famille",
+        it: "Cognome",
+        ar: "الاسم الأخير"
+      },
+      "Email": {
+        pt: "Correio eletrônico",
+        en: "Email",
+        es: "Correo electrónico",
+        fr: "Courriel",
+        it: "E-mail",
+        ar: "البريد الإلكتروني"
+      },
+      "Phone Number (optional)": {
+        pt: "Número de telefone (opcional)",
+        en: "Phone Number (optional)",
+        es: "Numero de telefono",
+        fr: "Numéro de téléphone (facultatif)",
+        it: "Numero di telefono (facoltativo)",
+        ar: "رقم الهاتف (اختياري)"
+      },
+      "Leave Your Message": {
+        pt: "Deixe sua mensagem",
+        en: "Leave Your Message",
+        es: "Deje su menaje",
+        fr: "Laissez votre message",
+        it: "Lascia il tuo messaggio",
+        ar: "اترك رسالتك"
+      },
+      "Submit": {
+        pt: "Enviar",
+        en: "Submit",
+        es: "Enviar",
+        fr: "Soumettre",
+        it: "Invia",
+        ar: "إرسال"
+      },
+      "Send me a message!": {
+        pt: "Envie uma mensagem",
+        en: "Send me a message!",
+        es: "¡Mandame un mensaje!",
+        fr: "Envoyez-moi un message !",
+        it: "Mandami un messaggio!",
+        ar: "أرسل لي رسالة!"
+      },
+      "Thank you for trying to return my luggage, please enter your information below to send a message. I'll make sure to get back to you as fast as I can :)": {
+        pt: "Obrigado por tentar devolver minha bagagem, por favor insira seus dados abaixo para enviar uma mensagem. Vou entrar em contato com você o mais rápido possível :)",
+        en: "Thank you for trying to return my luggage, please enter your information below to send a message. I'll make sure to get back to you as fast as I can :)",
+        es: "Gracias por intentar devolver mi equipaje, ingrese su información para enviar un mensaje. Te aseguro que te responderé lo más rápido que puedo :)",
+        fr: "Merci d'avoir essayé de retourner mes bagages, veuillez entrer vos informations ci-dessous pour envoyer un message. Je ferai en sorte de vous répondre aussi vite que possible :)",
+        it: "Grazie per aver tentato di restituire il mio bagaglio, inserisci i tuoi dati qui sotto per inviare un messaggio. Farò in modo di risponderti il prima possibile :)",
+        ar: "شكرا لمحاولة إعادة أمتعتي ، يرجى إدخال المعلومات الخاصة بك أدناه لإرسال رسالة. سأحرص على الرد عليك في أقرب وقت ممكن :)"
+      },
+      "Gerardo's Found Luggage Form": {
+        pt: "Formulário de Bagagem Encontrado do Gerardo",
+        en: "Gerardo's Found Luggage Form",
+        es: "Gerardo's Formulario de equipaje encontrado",
+        fr: "Formulaire de bagages fait par Gerardo",
+        it: "Modulo bagaglio realizzato da Gerardo",
+        ar: "اسْتِمارة صنعها جيراردو"
+      },
+      "Language": {
+        pt: "Língua",
+        en: "Language",
+        es: "Idioma",
+        fr: "Langue",
+        it: "Lingua",
+        ar: "لغة"
+      }
+    }
+
+
+    var translator = $('body').translate({
+      lang: "en",
+      t: dict
+    }); //use English
+
+    // translator.lang("en"); //set page lang to eng
+    //
+    // translator.lang("es"); // set page lang to spanish
+    //
+    // translator.lang("ar"); //set page lang to arabic
+    //
+    // translator.lang("fr"); // set page lang to french
+
+
+  </script>
+
 </body>
-
-<!-- javascript + plugins -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-<script src="translate.js-master/jquery.translate.js"></script>
-
-
-<script type="text/javascript">
-  var dict = {
-    "First Name": {
-      pt: "Nome",
-      en: "First Name",
-      es: "Nombre",
-      fr: "Prénom",
-      it: "Nome",
-      ar: "الاسم الأول",
-
-    },
-    "Last Name": {
-      pt: "Sobrenome",
-      en: "Last Name",
-      es: "Apellido",
-      fr: "Nom de famille",
-      it: "Cognome",
-      ar: "الاسم الأخير",
-    },
-    "Email": {
-      pt: "Correio eletrônico",
-      en: "Email",
-      es: "Correo electrónico",
-      fr: "Courriel",
-      it: "E-mail",
-      ar: "البريد الإلكتروني",
-    },
-    "Phone Number (optional)": {
-      pt: "Número de telefone (opcional)",
-      en: "Phone Number (optional)",
-      es: "Numero de telefono",
-      fr: "Numéro de téléphone (facultatif)",
-      it: "Numero di telefono (facoltativo)",
-      ar: "رقم الهاتف (اختياري)",
-    },
-    "Leave Your Message": {
-      pt: "Deixe sua mensagem",
-      en: "Leave Your Message",
-      es: "Deje su menaje",
-      fr: "Laissez votre message",
-      it: "Lascia il tuo messaggio",
-      ar: "اترك رسالتك",
-    },
-    "Submit": {
-      pt: "Enviar",
-      en: "Submit",
-      es: "Enviar",
-      fr: "Soumettre",
-      it: "Invia",
-      ar: "إرسال",
-    },
-    "Send me a message!": {
-      pt: "Envie uma mensagem",
-      en: "Send me a message!",
-      es: "¡Mandame un mensaje!",
-      fr: "Envoyez-moi un message !",
-      it: "Mandami un messaggio!",
-      ar: "أرسل لي رسالة!",
-    },
-    "Thank you for trying to return my luggage, please enter your information below to send a message. I'll make sure to get back to you as fast as I can :)": {
-      pt: "Obrigado por tentar devolver minha bagagem, por favor insira seus dados abaixo para enviar uma mensagem. Vou entrar em contato com você o mais rápido possível :)",
-      en: "Thank you for trying to return my luggage, please enter your information below to send a message. I'll make sure to get back to you as fast as I can :)",
-      es: "Gracias por intentar devolver mi equipaje, ingrese su información para enviar un mensaje. Te aseguro que te responderé lo más rápido que puedo :)",
-      fr: "Merci d'avoir essayé de retourner mes bagages, veuillez entrer vos informations ci-dessous pour envoyer un message. Je ferai en sorte de vous répondre aussi vite que possible :)",
-      it: "Grazie per aver tentato di restituire il mio bagaglio, inserisci i tuoi dati qui sotto per inviare un messaggio. Farò in modo di risponderti il prima possibile :)",
-      ar: "شكرا لمحاولة إعادة أمتعتي ، يرجى إدخال المعلومات الخاصة بك أدناه لإرسال رسالة. سأحرص على الرد عليك في أقرب وقت ممكن :)",
-    },
-    "Gerardo's Found Luggage Form": {
-      pt: "Formulário de Bagagem Encontrado do Gerardo",
-      en: "Gerardo's Found Luggage Form",
-      es: "Gerardo's Formulario de equipaje encontrado",
-      fr: "Formulaire de bagages fait par Gerardo",
-      it: "Modulo bagaglio realizzato da Gerardo",
-      ar: "اسْتِمارة صنعها جيراردو",
-    },
-    "Language": {
-      pt: "Formulário de Bagagem Encontrado do Gerardo",
-      en: "Gerardo's Found Luggage Form",
-      es: "Gerardo's Formulario de equipaje encontrado",
-      fr: "Formulaire de bagages fait par Gerardo",
-      it: "Modulo bagaglio realizzato da Gerardo",
-      ar: "اسْتِمارة صنعها جيراردو",
-    },
-  }
-
-  var translator = $('body').translate({
-    lang: "en",
-    t: dict
-  }); //use English
-
-  translator.lang("en");
-</script>
 
 </html>
