@@ -181,57 +181,75 @@
       }
     }
 
+    var lang = 'en';
+
+    if (localStorage.lang != undefined) {
+      lang = localStorage.lang;
+    }
     var translator = $('body').translate({
-      lang: "en",
+      lang: lang,
       t: dict
     });
+
     $('#menu-en').click(function() {
       translator.lang('en');
+      localStorage.lang ='en';
       return false;
     });
     $('#menu-es').click(function() {
       translator.lang('es');
+      localStorage.lang ='es';
       return false;
     });
     $('#menu-it').click(function() {
       translator.lang('it');
+      localStorage.lang ='it';
       return false;
     });
     $('#menu-fr').click(function() {
       translator.lang('fr');
+      localStorage.lang ='fr';
       return false;
     });
     $('#menu-ar').click(function() {
       translator.lang('ar');
+      localStorage.lang ='ar';
       return false;
     });
     $('#menu-pt').click(function() {
       translator.lang('pt');
+      localStorage.lang ='pt';
       return false;
     });
     // small
     $('#menu-en-xs').click(function() {
       translator.lang('en');
+      localStorage.lang ='en';
       return false;
     });
     $('#menu-es-xs').click(function() {
       translator.lang('es');
+      localStorage.lang ='es';
       return false;
     });
     $('#menu-it-xs').click(function() {
       translator.lang('it');
+      localStorage.lang ='it';
       return false;
     });
     $('#menu-fr-xs').click(function() {
       translator.lang('fr');
+      localStorage.lang ='fr';
       return false;
     });
     $('#menu-ar-xs').click(function() {
       translator.lang('ar');
+      localStorage.lang ='ar';
       return false;
     });
     $('#menu-pt-xs').click(function() {
       translator.lang('pt');
+      localStorage.lang ='pt';
       return false;
     });
   </script>
